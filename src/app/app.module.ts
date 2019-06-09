@@ -8,17 +8,11 @@ import { ProfileService } from './services/profile.service';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './components/profile/profile.component';
-import { ProfileDirectiveDirective } from './profile-directive.directive';
-import { DateCountPipe } from './date-count.pipe';
-import { ProfileDetailsComponent } from './profile-details/profile-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProfileComponent,
-    ProfileDirectiveDirective,
-    DateCountPipe,
-    ProfileDetailsComponent
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

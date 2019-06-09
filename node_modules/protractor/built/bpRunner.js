@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const child_process_1 = require("child_process");
+const q = require("q");
 const logger_1 = require("./logger");
 const BP_PATH = require.resolve('blocking-proxy/built/lib/bin.js');
 let logger = new logger_1.Logger('BlockingProxy');
@@ -9,7 +10,7 @@ class BlockingProxyRunner {
         this.config = config;
     }
     start() {
-        return new Promise((resolve, reject) => {
+        return q.Promise((resolve, reject) => {
             this.checkSupportedConfig();
             let args = [
                 '--fork',

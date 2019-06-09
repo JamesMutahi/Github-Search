@@ -4,7 +4,6 @@ const webdriver = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
 const firefox = require("selenium-webdriver/firefox");
 const http = require("selenium-webdriver/http");
-const command = require("selenium-webdriver/lib/command");
 const remote = require("selenium-webdriver/remote");
 class Ptor {
     constructor() {
@@ -21,7 +20,7 @@ class Ptor {
         this.ProtractorBy = require('./locators').ProtractorBy;
         this.ProtractorExpectedConditions = require('./expectedConditions').ProtractorExpectedConditions;
         // Export selenium webdriver.
-        this.Actions = webdriver.Actions;
+        this.ActionSequence = webdriver.ActionSequence;
         this.Browser = webdriver.Browser;
         this.Builder = webdriver.Builder;
         this.Button = webdriver.Button;
@@ -38,8 +37,8 @@ class Ptor {
         this.logging = webdriver.logging;
         this.promise = webdriver.promise;
         this.until = webdriver.until;
-        this.Command = command.Command;
-        this.CommandName = command.Name;
+        this.Command = require('selenium-webdriver/lib/command').Command;
+        this.CommandName = require('selenium-webdriver/lib/command').Name;
         this.utils = { firefox: firefox, http: http, remote: remote, chrome: chrome };
     }
 }

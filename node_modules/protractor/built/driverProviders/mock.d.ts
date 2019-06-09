@@ -1,21 +1,23 @@
+/// <reference types="q" />
+import * as q from 'q';
 import { WebDriver } from 'selenium-webdriver';
 import { Config } from '../config';
 import { DriverProvider } from './driverProvider';
 export declare class MockExecutor {
-    execute(_: any): any;
+    execute(command: any): any;
 }
 export declare class Mock extends DriverProvider {
     constructor(config?: Config);
     /**
      * An execute function that returns a promise with a test value.
      */
-    execute(): Promise<any>;
+    execute(): q.Promise<any>;
     /**
      * Configure and launch (if applicable) the object's environment.
      * @public
-     * @return {Promise} A promise which will resolve immediately.
+     * @return {q.promise} A promise which will resolve immediately.
      */
-    protected setupDriverEnv(): Promise<any>;
+    protected setupDriverEnv(): q.Promise<any>;
     /**
      * Create a new driver.
      *
@@ -23,5 +25,5 @@ export declare class Mock extends DriverProvider {
      * @override
      * @return webdriver instance
      */
-    getNewDriver(): Promise<WebDriver>;
+    getNewDriver(): WebDriver;
 }

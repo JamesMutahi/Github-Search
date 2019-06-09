@@ -2,7 +2,6 @@ import * as webdriver from 'selenium-webdriver';
 import * as chrome from 'selenium-webdriver/chrome';
 import * as firefox from 'selenium-webdriver/firefox';
 import * as http from 'selenium-webdriver/http';
-import * as command from 'selenium-webdriver/lib/command';
 import * as remote from 'selenium-webdriver/remote';
 import { ElementHelper, ProtractorBrowser } from './browser';
 import { ElementArrayFinder, ElementFinder } from './element';
@@ -22,15 +21,15 @@ export declare class Ptor {
     ElementArrayFinder: any;
     ProtractorBy: any;
     ProtractorExpectedConditions: any;
-    Actions: typeof webdriver.Actions;
+    ActionSequence: typeof webdriver.ActionSequence;
     Browser: webdriver.IBrowser;
     Builder: typeof webdriver.Builder;
-    Button: typeof webdriver.Button;
+    Button: webdriver.IButton;
     Capabilities: typeof webdriver.Capabilities;
     Capability: webdriver.ICapability;
     EventEmitter: typeof webdriver.EventEmitter;
     FileDetector: typeof webdriver.FileDetector;
-    Key: import("./selenium-webdriver/lib/input").IKey;
+    Key: webdriver.IKey;
     Session: typeof webdriver.Session;
     WebDriver: typeof webdriver.WebDriver;
     WebElement: typeof webdriver.WebElement;
@@ -39,8 +38,8 @@ export declare class Ptor {
     logging: typeof webdriver.logging;
     promise: typeof webdriver.promise;
     until: typeof webdriver.until;
-    Command: typeof command.Command;
-    CommandName: command.ICommandName;
+    Command: any;
+    CommandName: any;
     utils: {
         firefox: typeof firefox;
         http: typeof http;

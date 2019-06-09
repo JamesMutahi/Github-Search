@@ -1,8 +1,9 @@
-import { SeleniumServer } from 'selenium-webdriver/remote';
+/// <reference types="q" />
+import * as q from 'q';
 import { Config } from '../config';
 import { DriverProvider } from './driverProvider';
 export declare class Local extends DriverProvider {
-    server_: SeleniumServer;
+    server_: any;
     constructor(config: Config);
     /**
      * Helper to locate the default jar path if none is provided by the user.
@@ -12,8 +13,18 @@ export declare class Local extends DriverProvider {
     /**
      * Configure and launch (if applicable) the object's environment.
      * @public
-     * @return {Promise} A promise which will resolve when the environment is
+     * @return {q.promise} A promise which will resolve when the environment is
      *     ready to test.
      */
-    setupDriverEnv(): Promise<any>;
+    setupDriverEnv(): q.Promise<any>;
+    /**
+     * Teardown and destroy the environment and do any associated cleanup.
+     * Shuts down the drivers and server.
+     *
+     * @public
+     * @override
+     * @return {q.promise} A promise which will resolve when the environment
+     *     is down.
+     */
+    teardownEnv(): q.Promise<any>;
 }

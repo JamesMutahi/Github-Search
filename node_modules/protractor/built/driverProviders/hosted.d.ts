@@ -1,3 +1,5 @@
+/// <reference types="q" />
+import * as q from 'q';
 import { Config } from '../config';
 import { DriverProvider } from './driverProvider';
 export declare class Hosted extends DriverProvider {
@@ -5,8 +7,8 @@ export declare class Hosted extends DriverProvider {
     /**
      * Configure and launch (if applicable) the object's environment.
      * @public
-     * @return {Promise} A promise which will resolve when the environment is
+     * @return {q.promise} A promise which will resolve when the environment is
      *     ready to test.
      */
-    protected setupDriverEnv(): Promise<any>;
+    protected setupDriverEnv(): q.Promise<any>;
 }

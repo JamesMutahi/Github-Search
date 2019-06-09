@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+h1 {
+    color: goldenrod;
+}
+
+body {
+    background-color: black;
+}
+
+.hr-light {
+    border-top: 3px solid goldenrod;
+    width: 100%;
+}

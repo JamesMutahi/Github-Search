@@ -1,13 +1,15 @@
 /// <reference types="node" />
+/// <reference types="q" />
 import { EventEmitter } from 'events';
+import * as q from 'q';
 import { Config } from './config';
 export interface RunResults {
-    taskId?: number;
-    specs?: Array<string>;
-    capabilities?: any;
-    failedCount?: number;
-    exitCode?: number;
-    specResults?: Array<any>;
+    taskId: number;
+    specs: Array<string>;
+    capabilities: any;
+    failedCount: number;
+    exitCode: number;
+    specResults: Array<any>;
 }
 /**
  * A runner for running a specified task (capabilities + specs).
@@ -29,10 +31,10 @@ export declare class TaskRunner extends EventEmitter {
     constructor(configFile: string, additionalConfig: Config, task: any, runInFork: boolean);
     /**
      * Sends the run command.
-     * @return {Promise} A promise that will resolve when the task finishes
+     * @return {q.Promise} A promise that will resolve when the task finishes
      *     running. The promise contains the following parameters representing the
      *     result of the run:
      *       taskId, specs, capabilities, failedCount, exitCode, specResults
      */
-    run(): Promise<any>;
+    run(): q.Promise<any>;
 }

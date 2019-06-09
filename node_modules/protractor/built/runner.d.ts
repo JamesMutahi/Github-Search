@@ -1,5 +1,8 @@
 /// <reference types="node" />
+/// <reference types="q" />
 import { EventEmitter } from 'events';
+import * as q from 'q';
+import { promise as wdpromise } from 'selenium-webdriver';
 import { ProtractorBrowser } from './browser';
 import { Config } from './config';
 import { DriverProvider } from './driverProviders';
@@ -10,9 +13,9 @@ export declare class Runner extends EventEmitter {
     driverprovider_: DriverProvider;
     o: any;
     plugins_: Plugins;
-    restartPromise: Promise<any>;
+    restartPromise: q.Promise<any>;
     frameworkUsesAfterEach: boolean;
-    ready_?: Promise<void>;
+    ready_?: wdpromise.Promise<void>;
     constructor(config: Config);
     /**
      * Registrar for testPreparers - executed right before tests run.
@@ -24,19 +27,19 @@ export declare class Runner extends EventEmitter {
      * Executor of testPreparer
      * @public
      * @param {string[]=} An optional list of command line arguments the framework will accept.
-     * @return {Promise} A promise that will resolve when the test preparers
+     * @return {q.Promise} A promise that will resolve when the test preparers
      *     are finished.
      */
-    runTestPreparer(extraFlags?: string[]): Promise<any>;
+    runTestPreparer(extraFlags?: string[]): q.Promise<any>;
     /**
      * Called after each test finishes.
      *
      * Responsible for `restartBrowserBetweenTests`
      *
      * @public
-     * @return {Promise} A promise that will resolve when the work here is done
+     * @return {q.Promise} A promise that will resolve when the work here is done
      */
-    afterEach(): Promise<void>;
+    afterEach(): q.Promise<void>;
     /**
      * Grab driver provider based on type
      * @private
@@ -54,13 +57,18 @@ export declare class Runner extends EventEmitter {
      * @private
      * @param {int} Standard unix exit code
      */
-    exit_(exitCode: number): Promise<number>;
+    exit_: (exitCode: number) => any;
     /**
      * Getter for the Runner config object
      * @public
      * @return {Object} config
      */
     getConfig(): Config;
+    /**
+     * Get the control flow used by this runner.
+     * @return {Object} WebDriver control flow.
+     */
+    controlFlow(): any;
     /**
      * Sets up convenience globals for test specs
      * @private
@@ -78,19 +86,19 @@ export declare class Runner extends EventEmitter {
      * @return {Protractor} a protractor instance.
      * @public
      */
-    createBrowser(plugins: any, parentBrowser?: ProtractorBrowser): Promise<any>;
+    createBrowser(plugins: any, parentBrowser?: ProtractorBrowser): any;
     /**
      * Final cleanup on exiting the runner.
      *
-     * @return {Promise} A promise which resolves on finish.
+     * @return {q.Promise} A promise which resolves on finish.
      * @private
      */
-    shutdown_(): Promise<void>;
+    shutdown_(): q.Promise<void>;
     /**
      * The primary workhorse interface. Kicks off the test running process.
      *
-     * @return {Promise} A promise which resolves to the exit code of the tests.
+     * @return {q.Promise} A promise which resolves to the exit code of the tests.
      * @public
      */
-    run(): Promise<number>;
+    run(): q.Promise<any>;
 }
