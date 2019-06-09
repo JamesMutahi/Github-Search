@@ -1,28 +1,44 @@
-# GitGoogle
+# PIG DICE
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.7.
+####This is an app to search Github user profiles and their repositories.
 
-## Development server
+#### By **James Mutahi**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Description
 
-## Code scaffolding
+Users can enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Behaviour Driven Development(BDD)
 
-## Build
+| Behaviour                    | Input  | Output                            |
+| ---------------------------- | ------ | --------------------------------- |
+| Enter a name into search bar | Key in | Show profiles matching the search |
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Setup/Installation Requirements
 
-## Running unit tests
+- An internet connection
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+There are no extra dependencies to be installed or databases and no other code that may be crucial to access this material.
 
-## Running end-to-end tests
+## Known Bugs
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+There are no known bugs. In case you do encounter any, please contact us on the deatils below.
 
-## Further help
+## Technologies Used
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Angular was the framework used to achieve the app using HTML and CSS as the primary languages on Visual Studio Code as the editor. Bootstrap CSS, Javascript and Jquery were also included for additional styling.
+
+## Support and contact details
+
+If you experience issues that are related to my site and are hindering you from accessing this material, then please contact me @ mutahijames0@gmail.com
+
+### Live Site
+
+To view this site access https://jamesmutahi.github.io/Github-Seacrh/
+
+### License
+
+The MIT licence
+https://github.com/JamesMutahi/Github-Search/blob/master/LICENSE
+Copyright (c)2019
+**James Mutahi**
