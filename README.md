@@ -1,4 +1,4 @@
-# PIG DICE
+# GITHUB SEARCH
 
 ####This is an app to search Github user profiles and their repositories.
 
