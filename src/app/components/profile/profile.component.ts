@@ -10,8 +10,9 @@ export class ProfileComponent implements OnInit {
   profile:any[];
   repos: any[];
   username:string;
+  today = Date();
 
-  constructor(private profileService: ProfileService) { 
+  constructor(private profileService: ProfileService) {
 
   }
 
@@ -25,7 +26,7 @@ export class ProfileComponent implements OnInit {
   	this.profileService.getProfileRepos().subscribe(repos => {
   		console.log(repos);
   		this.repos = repos;
-  	})  	
+  	})
   }
 
   ngOnInit() {
