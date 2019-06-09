@@ -1,0 +1,20 @@
+.search-form {
+    padding-top: 50px;
+}
+
+.bg-profile {
+    background-color: transparent;
+}
+
+h2,
+h3,
+h5,
+img {
+    color: goldenrod;
+}
+
+.card,
+.list-group,
+li {
+    background-color: whitesmoke;
+}
